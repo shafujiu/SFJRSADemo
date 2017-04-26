@@ -8,7 +8,6 @@
 
 #import "DESEncrypt.h"
 #import <CommonCrypto/CommonCrypto.h>
-//#import "SFJBase64.h"
 #import "NSData+Base64.h"
 #import "NSString+Base64.h"
 
@@ -35,7 +34,6 @@ const Byte iv[] = {1,2,3,4,5,6,7,8};
                                           &numBytesEncrypted);
     if (cryptStatus == kCCSuccess) {
         NSData *data = [NSData dataWithBytes:buffer length:(NSUInteger)numBytesEncrypted];
-//        ciphertext = [SFJBase64 encode:data];
         ciphertext = [data base64EncodedString];
     }
     return ciphertext;
@@ -45,8 +43,6 @@ static NSUInteger const kBufferMoreSize = 128;
 +(NSString *)decryptUseDES:(NSString *)cipherText key:(NSString *)key
 {
     NSString *plaintext = nil;
-    
-//    NSData *cipherdata = [SFJBase64 decode:cipherText];
     NSData *cipherdata = [cipherText base64DecodedData];
     
     NSUInteger bufferSize = cipherdata.length + kBufferMoreSize;
