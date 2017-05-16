@@ -16,12 +16,12 @@ RSA 加解密是来自于大神的封装 [HustBroventure/iOSRSAHandler](https://
 - 生成RSA公钥
 `openssl rsa -in rsa_private_key.pem -pubout -out rsa_public_key.pem`
 注意通常iOS 与 android都是同步开发的，但是这里的私钥的格式与android是不一样的，需要将私钥转换成PKCS8格式
-
+- 转换为pkcs8格式
 `openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM -nocrypt -out private_key.pem`
 （后边一定要加-out private_key.pem将转换后的私钥保存在private_key.pem，不然得到的结果要设置密码且显示在终端中，这个和得到pem中的私钥有差异。）
 
 
-### 方法介绍
+#### 方法介绍
 ```Objective-c
 - (BOOL)importKeyWithType:(KeyType)type andPath:(NSString*)path;
 - (BOOL)importKeyWithType:(KeyType)type andkeyString:(NSString *)keyString;
