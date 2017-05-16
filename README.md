@@ -7,7 +7,21 @@ RSA 加解密是来自于大神的封装 [HustBroventure/iOSRSAHandler](https://
 由于openssl的导入相对比较麻烦，文件也比较多，所以该Demo将RSA 加解密基于HustBroventure/iOSRSAHandler
 制作了一个静态库 使用的时候只需将在项目中引入`RSASDK` 文件件即可。
 
-提供的方法如下,相信这方法名已经足以表达该方法的用处了，所以未作过多的注释
+#### 生RSA密钥
+
+- 生成RSA私钥
+`openssl genrsa -out rsa_private_key.pem 1024`
+注意生成的路径，如果需要在指定路径下拿到该文件，那么需要cd到该路径下。
+
+- 生成RSA公钥
+`openssl rsa -in rsa_private_key.pem -pubout -out rsa_public_key.pem`
+注意通常iOS 与 android都是同步开发的，但是这里的私钥的格式与android是不一样的，需要将私钥转换成PKCS8格式
+
+`openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM -nocrypt -out private_key.pem`
+（后边一定要加-out private_key.pem将转换后的私钥保存在private_key.pem，不然得到的结果要设置密码且显示在终端中，这个和得到pem中的私钥有差异。）
+
+
+### 方法介绍
 ```Objective-c
 - (BOOL)importKeyWithType:(KeyType)type andPath:(NSString*)path;
 - (BOOL)importKeyWithType:(KeyType)type andkeyString:(NSString *)keyString;
