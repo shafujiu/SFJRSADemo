@@ -13,11 +13,13 @@
 		8154BB0B1EAF45540014285D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8154BB091EAF45540014285D /* Main.storyboard */; };
 		8154BB0D1EAF45540014285D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8154BB0C1EAF45540014285D /* Assets.xcassets */; };
 		8154BB101EAF45540014285D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8154BB0E1EAF45540014285D /* LaunchScreen.storyboard */; };
-		8154BB361EAF45660014285D /* libHBRSHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8154BB351EAF45660014285D /* libHBRSHandler.a */; };
 		8154BB3F1EAF495E0014285D /* DESViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8154BB3E1EAF495E0014285D /* DESViewController.m */; };
 		8154BB4D1EAF54500014285D /* DESEncrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 8154BB481EAF54500014285D /* DESEncrypt.m */; };
 		8154BB4E1EAF54500014285D /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 8154BB4A1EAF54500014285D /* NSData+Base64.m */; };
 		8154BB4F1EAF54500014285D /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 8154BB4C1EAF54500014285D /* NSString+Base64.m */; };
+		81C98AE21EE6AE8800116915 /* libHBRSAHandlerLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C98AE11EE6AE8800116915 /* libHBRSAHandlerLib.a */; };
+		81C98B9A1EE6B44600116915 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C98B981EE6B44600116915 /* libcrypto.a */; };
+		81C98B9B1EE6B44600116915 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C98B991EE6B44600116915 /* libssl.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +52,6 @@
 		8154BB111EAF45540014285D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8154BB161EAF45540014285D /* SFJRSADemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SFJRSADemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8154BB211EAF45540014285D /* SFJRSADemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SFJRSADemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8154BB341EAF45660014285D /* HBRSAHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBRSAHandler.h; sourceTree = "<group>"; };
-		8154BB351EAF45660014285D /* libHBRSHandler.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libHBRSHandler.a; sourceTree = "<group>"; };
 		8154BB3D1EAF495E0014285D /* DESViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DESViewController.h; sourceTree = "<group>"; };
 		8154BB3E1EAF495E0014285D /* DESViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DESViewController.m; sourceTree = "<group>"; };
 		8154BB471EAF54500014285D /* DESEncrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DESEncrypt.h; sourceTree = "<group>"; };
@@ -60,6 +60,10 @@
 		8154BB4A1EAF54500014285D /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		8154BB4B1EAF54500014285D /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
 		8154BB4C1EAF54500014285D /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		81C98ADE1EE6ADBF00116915 /* HBRSAHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBRSAHandler.h; sourceTree = "<group>"; };
+		81C98AE11EE6AE8800116915 /* libHBRSAHandlerLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libHBRSAHandlerLib.a; sourceTree = "<group>"; };
+		81C98B981EE6B44600116915 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		81C98B991EE6B44600116915 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8154BB361EAF45660014285D /* libHBRSHandler.a in Frameworks */,
+				81C98B9A1EE6B44600116915 /* libcrypto.a in Frameworks */,
+				81C98AE21EE6AE8800116915 /* libHBRSAHandlerLib.a in Frameworks */,
+				81C98B9B1EE6B44600116915 /* libssl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +143,10 @@
 		8154BB331EAF45660014285D /* RSASDK */ = {
 			isa = PBXGroup;
 			children = (
-				8154BB341EAF45660014285D /* HBRSAHandler.h */,
-				8154BB351EAF45660014285D /* libHBRSHandler.a */,
+				81C98ADE1EE6ADBF00116915 /* HBRSAHandler.h */,
+				81C98AE11EE6AE8800116915 /* libHBRSAHandlerLib.a */,
+				81C98B981EE6B44600116915 /* libcrypto.a */,
+				81C98B991EE6B44600116915 /* libssl.a */,
 			);
 			path = RSASDK;
 			sourceTree = "<group>";
@@ -448,11 +456,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Q2Z69VY84R;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = SFJRSADemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SFJRSADemo/RSASDK",
+					"$(PROJECT_DIR)/SFJRSADemo/RSASDK/opensslSDK/include",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shafujiu.SFJRSADemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -464,11 +474,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Q2Z69VY84R;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = SFJRSADemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SFJRSADemo/RSASDK",
+					"$(PROJECT_DIR)/SFJRSADemo/RSASDK/opensslSDK/include",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shafujiu.SFJRSADemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -544,6 +556,7 @@
 				8154BB2C1EAF45540014285D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8154BB2D1EAF45540014285D /* Build configuration list for PBXNativeTarget "SFJRSADemoTests" */ = {
 			isa = XCConfigurationList;
@@ -552,6 +565,7 @@
 				8154BB2F1EAF45540014285D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8154BB301EAF45540014285D /* Build configuration list for PBXNativeTarget "SFJRSADemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -560,6 +574,7 @@
 				8154BB321EAF45540014285D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
