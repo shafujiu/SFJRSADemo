@@ -38,8 +38,30 @@ RSA 加解密是来自于大神的封装 [HustBroventure/iOSRSAHandler](https://
 - (NSString *) encryptWithPublicKey:(NSString*)content;
 - (NSString *) decryptWithPrivatecKey:(NSString*)content;
 ```
-
 然后在ViewController里面有 RSA的用法
+
+#### RSA 中 openssl库，对bitcode的支持
+
+之前的版本oppenssl库对bitcode是不支持的，所以当我们用真机调试的时候就会报错。那么如何让我们的libHBRSAHandlerLib.a静态库也支持bitcode呢。
+
+这其实是两个问题
+
+1. openssl支持bitcode
+2. libHBRSAHandlerLib.a支持bitcode
+
+解决问题2的关键就是解决问题1。通常也就这一种方式。静态库中只要你引用的任何一个第三方静态库不支持bitcode那么你最后打包的静态库 也是不能支持bitcode的。
+
+那么我们要做的就是解决问题一，然后再用支持bitcode的openssl库去制作我们能的静态库这样就解决了。
+
+#### 编译支持bitcode的openssl库
+
+参考 [iOS编译OpenSSL静态库(使用脚本自动编译)](http://www.jianshu.com/p/651513cab181)
+使用开源的脚本来自动编译，我们需要的openssl库。
+
+最后这里是libHBRSAHandlerLib.a的制作的demo的github地址
+[HBRSAHandlerLib](https://github.com/shafujiu/HBRSAHandlerLib)
+
+
 
 ### DES
 
